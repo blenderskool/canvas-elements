@@ -24,5 +24,15 @@
     "rollup-plugin-uglify": "^6.0.2",
     "tslib": "^1.9.3",
     "typescript": "^3.3.3333"
-  }
+  },
+  "dependencies": {},
+  "keywords": [
+    "library",
+    "collection",
+    "simple",
+    "html5",
+    "canvas",
+    "elements",
+    "components"
+  ]
 }
