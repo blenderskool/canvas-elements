@@ -1,0 +1,28 @@
+{
+  "name": "canvas-elements",
+  "version": "0.0.1",
+  "description": "Collection of easy to use elements with HTML5 Canvas",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "bundle": "npm run build && gulp bundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blenderskool/canvas-elements.git"
+  },
+  "author": "Akash Hamirwasia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blenderskool/canvas-elements/issues"
+  },
+  "homepage": "https://github.com/blenderskool/canvas-elements#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "rollup": "^1.6.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "tslib": "^1.9.3",
+    "typescript": "^3.3.3333"
+  }
+}
