@@ -13,7 +13,7 @@ npm install canvas-elements
 ### Using CDN
 The project also includes a minified CDN file in the `build/cdn` directory of the project.
 ```
-https://unpkg.com/canvas-elements@latest/build/cdn/canvas-elements.js
+https://unpkg.com/canvas-elements@latest/build/cdn/canvas-elements.min.js
 ```
 
 ## Using the library
