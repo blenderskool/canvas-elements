@@ -1,4 +1,7 @@
 # Canvas Elements
+[![Release](https://badgen.net/github/release/blenderskool/canvas-elements?color=orange)](https://npmjs.com/package/canvas-elements)
+[![Size](https://badgen.net/bundlephobia/min/canvas-elements?color=green)](https://npmjs.com/package/canvas-elements)
+[![License](https://badgen.net/github/license/blenderskool/canvas-elements)](https://github.com/blenderskool/canvas-elements/blob/master/LICENSE)
 
 Canvas Elements is a library of commonly used components for HTML5 canvas made easy to use with JavaScript and Node.js.
 It wraps the structure and the styling of elements into one which makes it easy to create new elements on the canvas.
