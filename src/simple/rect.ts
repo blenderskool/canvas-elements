@@ -12,6 +12,19 @@ export default class Rect implements Component {
   borderWidth: number;
   ctx: CanvasRenderingContext2D;
 
+  /**
+   * 
+   * @param {Object} options options to create rectangles
+   * @param {number} options.x x coordinate
+   * @param {number} options.y y coordinate
+   * @param {number} options.w rectangle width
+   * @param {number} options.h rectangle height
+   * @param {number} options.r border radius (roundness of corners)
+   * @param {string} options.borderColor border color
+   * @param {string} options.background fill color
+   * @param {number} options.borderWidth border width
+   * @param {CanvasRenderingContext2D} options.ctx canvas context where rectangle would be drawn
+   */
   constructor(
     { x, y, w, h, r, borderColor, background = '#000', borderWidth = 0, ctx } :
     {x: number, y: number, w: number, h: number, r: number, borderColor?: string, background?: string,
