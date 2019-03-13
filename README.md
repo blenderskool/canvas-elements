@@ -16,7 +16,7 @@ npm install canvas-elements
 ### Using CDN
 The project also includes a minified CDN file in the `build/cdn` directory of the project.
 ```
-https://unpkg.com/canvas-elements@latest/build/cdn/canvas-elements.min.js
+https://unpkg.com/canvas-elements/build/cdn/canvas-elements.min.js
 ```
 
 ## Using the library
@@ -39,7 +39,9 @@ var circle = new CanvasElements.Circle({
 ```
 
 ### Example usage
-This example program creates a circle with blue rounded rectangle which has 'Hello Canvas' text at the center.
+This example program creates a circle with blue rounded rectangle which has 'Hello Canvas' text at the center.  
+[Check it on JSFiddle](https://jsfiddle.net/hcqokzb1/)
+
 ```javascript
 var canvas = document.getElementsByTagName('canvas')[0]; // Get the canvas element reference
 var ctx = canvas.getContext('2d'); // Get context of the canvas
