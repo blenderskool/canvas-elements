@@ -1,16 +1,11 @@
-import { Component } from './interfaces';
+import { Element } from './base';
 
-export default class Ellipse implements Component {
+export default class Ellipse extends Element {
 
-  x: number;
-  y: number;
   radiusX: number;
   radiusY: number;
-  rotation: number;
-  background: string;
   borderColor: string;
   borderWidth: number;
-  ctx: CanvasRenderingContext2D;
 
   /**
    * @param {Object} options options to create a circle
@@ -27,16 +22,15 @@ export default class Ellipse implements Component {
       rotation?: number, background?: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D }
   ) {
 
-    const { x, y, radiusX, radiusY, rotation, background, borderColor, borderWidth, ctx} = options;
+    const { x, y, radiusX, radiusY, rotation = 0, background, borderColor, borderWidth = 0, ctx} = options;
+    super(x, y, rotation, background, ctx);
 
     this.x = x;
     this.y = y;
     this.radiusX = radiusX;
     this.radiusY = radiusY;
-    this.rotation = rotation || 0;
-    this.background = background || 'black';
     this.borderColor = borderColor;
-    this.borderWidth = borderWidth || 0;
+    this.borderWidth = borderWidth;
     this.ctx = ctx;
 
     this.draw();

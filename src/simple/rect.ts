@@ -1,16 +1,12 @@
-import { Component } from './interfaces';
+import { Element } from './base';
 
-export default class Rect implements Component {
+export default class Rect extends Element {
 
-  x: number;
-  y: number;
   r: number;
   w: number;
   h: number;
-  background: string;
   borderColor: string;
   borderWidth: number;
-  ctx: CanvasRenderingContext2D;
 
   /**
    * 
@@ -26,26 +22,24 @@ export default class Rect implements Component {
    * @param {CanvasRenderingContext2D} options.ctx canvas context where rectangle would be drawn
    */
   constructor(
-    { x, y, w, h, r, borderColor, background = '#000', borderWidth = 0, ctx } :
-    {x: number, y: number, w: number, h: number, r: number, borderColor?: string, background?: string,
+    { x, y, w, h, r=0, rotation=0, borderColor, background = '#000', borderWidth = 0, ctx } :
+    {x: number, y: number, w: number, h: number, r?: number, rotation?: number, borderColor?: string, background?: string,
       borderWidth?: number, ctx: CanvasRenderingContext2D}
   ) {
-    this.x = x;
-    this.y = y;
+    super(x, y, rotation, background, ctx);
     this.r = r;
     this.w = w;
     this.h = h;
-    this.background = background;
     this.borderColor = borderColor;
     this.borderWidth = borderWidth;
-    this.ctx = ctx;
 
     this.draw();
   }
 
-
   draw() {
-    
+    // Initial rotation about the center of the rectangle
+    this.rotate(this.w/2 + this.x, this.h/2 + this.y);
+
     if (this.w < 2 * this.r) this.r = this.w / 2;
     if (this.h < 2 * this.r) this.r = this.h / 2;
 
@@ -66,6 +60,10 @@ export default class Rect implements Component {
     }
 
     this.ctx.fill();
+
+    // Rotate the canvas back to its original state
+    this.rotate(this.w/2 + this.x, this.h/2 + this.y, false);
+
   }
 
 }
