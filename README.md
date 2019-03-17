@@ -149,6 +149,15 @@ npm install
 The source code is located in the `src` folder. Once the project is built or bundled, `build` directory would be created which
 contains the code for distribution.
 
+### To run the development server
+Playground is included in the project in `playground` directory. This is used to test features of Canvas Elements during development.
+**Do not commit changes in playground.**
+
+```bash
+npm run dev
+```
+This will start a live development server on port `3030`.
+
 ### To build the project
 ```bash
 npm run build

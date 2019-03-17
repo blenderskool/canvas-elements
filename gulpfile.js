@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const rollup = require('rollup');
 const rollupTypescript = require('rollup-plugin-typescript');
 const uglify = require('rollup-plugin-uglify').uglify;
+const browserSync = require('browser-sync').create();
 
 
 gulp.task('bundle', function() {
@@ -22,4 +23,27 @@ gulp.task('bundle', function() {
     })
   });
   
+});
+
+gulp.task('dev', function() {
+
+  browserSync.init({
+    server: {
+      baseDir: './playground'
+    },
+    serveStatic: ['.'],
+    port: 3030,
+    ui: false,
+    online: false
+  });
+
+  function reload(done) {
+    browserSync.reload();
+
+    done();
+  };
+
+  gulp.watch('./src/**/*', gulp.series('bundle', reload));
+  gulp.watch('./playground/**/*', reload);
+
 });
