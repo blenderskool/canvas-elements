@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "bundle": "npm run build && gulp bundle"
+    "bundle": "npm run build && gulp bundle",
+    "dev": "gulp dev"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/blenderskool/canvas-elements#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "rollup": "^1.6.0",
     "rollup-plugin-typescript": "^1.0.0",
