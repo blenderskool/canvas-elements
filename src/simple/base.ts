@@ -7,6 +7,14 @@ class Element {
   ctx: CanvasRenderingContext2D;
 
   constructor(x: number, y: number, rotation: number = 0, background: string = '#000', ctx: CanvasRenderingContext2D) {
+
+    if (!x)
+      throw new Error('X coordinate is not defined');
+    if (!y)
+      throw new Error('Y coordinate is not defined');
+    if (!ctx)
+      throw new Error('Canvas rendering context is not defined');
+
     this.x = x;
     this.y = y;
     this.rotation = rotation;
