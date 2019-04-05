@@ -94,6 +94,7 @@ These options are common between all the elements included in the library.
 | y | `number` (required) | Y coordinate of the element in canvas |
 | ctx | `CanvasRenderingContext2D` (required) | Context of the canvas to which the element must be drawn |
 | background| `string` (optional) | Fill color. Eg. `#6ddad0`, `rgba(20, 30, 40, 0.5)` |
+| rotation | `number` (optional) | Rotation of the element in radians. Center is geometric center for shapes and starting coordinates for `Text` element
 
 ### Circle
 Some exclusive options for Circle element.
