@@ -112,7 +112,7 @@ Some exclusive options for Rect element to create rectangles.
 |:--:| -- | -- |
 | w | `number` (required) | Width of the rectangle |
 | h | `number` (required) | Height of the rectangle |
-| r | `number` (required) | Roundness of every corner. Same as `border-radius` CSS property |
+| r | `number` (optional) | Roundness of every corner. Same as `border-radius` CSS property |
 | borderColor | `string` (optional) | Color of the border around the rectangle |
 | borderWidth | `number` (optional) | Thickness of the border |
 
