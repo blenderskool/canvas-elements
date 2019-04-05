@@ -8,5 +8,6 @@
     "module": "commonjs",
     // "declaration": true,
     "outDir": "./build",
+    "experimentalDecorators": true
   }
 }

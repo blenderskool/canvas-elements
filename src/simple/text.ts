@@ -1,17 +1,13 @@
-import { Component } from './interfaces';
+import { Element } from './base';
 
-export default class Text implements Component {
+export default class Text extends Element {
 
-  x: number;
-  y: number;
   size: number;
   font: string;
-  background: string;
   align: CanvasTextAlign;
   baseline: CanvasTextBaseline;
   weight: string;
   text: string;
-  ctx: CanvasRenderingContext2D;
 
   /**
    * @param {Object} options options to create text
@@ -28,10 +24,21 @@ export default class Text implements Component {
    */
   constructor(
     options :
-    { x: number, y: number, size: number, font?: string, background?: string, align?: CanvasTextAlign,
+    { x: number, y: number, rotation?: number, size?: number, font?: string, background?: string, align?: CanvasTextAlign,
       baseline?: CanvasTextBaseline, weight?: string, text: string, ctx: CanvasRenderingContext2D }
   ) {
-    const { x, y, size, font='Arial', background='#000', align='left', baseline='middle', text, ctx, weight = '400' } = options;
+    const {
+      x, y, size=18,
+      rotation=0,
+      font='Arial',
+      background='#000',
+      align='left',
+      baseline='middle',
+      text, ctx,
+      weight = '400'
+    } = options;
+
+    super(x, y, rotation, background, ctx);
 
     this.x = x;
     this.y = y;
@@ -49,12 +56,17 @@ export default class Text implements Component {
   }
 
   draw() {
+    // Initial rotation about the starting point of text
+    this.rotate(this.x, this.y);
 
     this.ctx.font = `${this.weight} ${this.size}px ${this.font}`;
     this.ctx.fillStyle = this.background;
     this.ctx.textAlign = this.align;
     this.ctx.textBaseline = this.baseline;
     this.ctx.fillText(this.text, this.x, this.y);
+
+    // Rotate the canvas back to its original state
+    this.rotate(this.x, this.y, false);
 
   }
   
