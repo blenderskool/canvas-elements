@@ -126,6 +126,19 @@ Some exclusive options for Ellipse element.
 | borderColor | `string` (optional) | Color of the border around the ellipse |
 | borderWidth | `number` (optional) | Thickness of the border |
 
+### Line
+Some exclusive options for Line element.
+
+|Option| Type | Description |
+|:--:| -- | -- |
+| x2 | `number` (optional) | Ending x coordinate of the line |
+| y2 | `number` (optional) | Ending y coordinate of the line |
+| r | `string` (optional) | Distance from (x, y) for Polar system |
+| angle | `number` (optional) | Angle from the horizontal axis in radians (Clockwise is positive) for Polar system |
+| borderColor | `number` (optional) | Color of the line (same as `background` option) |
+| borderWidth | `number` (optional) | Thickness of the line |
+
+
 ### Text
 Some exclusive options for Text element to render text.
 
