@@ -1,4 +1,4 @@
-import { Circle, Rect, Text, Ellipse } from './simple';
+import { Circle, Rect, Text, Ellipse, Line } from './simple';
 
 declare global {
   interface Window {
@@ -10,8 +10,9 @@ window.CanvasElements = {
   Circle,
   Rect,
   Text,
-  Ellipse
+  Ellipse,
+  Line,
 } || {};
 
 
-export { Circle, Rect, Text, Ellipse };
+export { Circle, Rect, Text, Ellipse, Line };
