@@ -20,7 +20,7 @@ export default class Text extends Element {
    * @param {string} options.baseline text baseline
    * @param {string} options.weight text weight
    * @param {string} options.text text to be shown
-   * @param {CanvasRenderingContext2D} options.ctx canvas context where circle would be drawn
+   * @param {CanvasRenderingContext2D} options.ctx canvas context where text would be drawn
    */
   constructor(
     options :
@@ -31,7 +31,7 @@ export default class Text extends Element {
       x, y, size=18,
       rotation=0,
       font='Arial',
-      background='#000',
+      background,
       align='left',
       baseline='middle',
       text, ctx,

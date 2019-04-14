@@ -8,14 +8,15 @@ export default class Ellipse extends Element {
   borderWidth: number;
 
   /**
-   * @param {Object} options options to create a circle
-   * @param {number} options.x x coordinate of the circle
-   * @param {number} options.y y coordinate of the circle
-   * @param {number} options.r radius of the circle
+   * @param {Object} options options to create an ellipse
+   * @param {number} options.x x coordinate of the ellipse
+   * @param {number} options.y y coordinate of the ellipse
+   * @param {number} options.radiusX horizontal radius of the ellipse
+   * @param {number} options.radiusY vertical radius of the ellipse
    * @param {string} options.background fill color
    * @param {string} options.borderColor border color
    * @param {number} options.borderWidth border width
-   * @param {CanvasRenderingContext2D} options.ctx canvas context where circle would be drawn
+   * @param {CanvasRenderingContext2D} options.ctx canvas context where ellipse would be drawn
    */
   constructor(options :
     { x: number, y: number, radiusX: number, radiusY: number,
