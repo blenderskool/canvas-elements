@@ -133,9 +133,9 @@ Some exclusive options for Line element.
 |:--:| -- | -- |
 | x2 | `number` (optional) | Ending x coordinate of the line |
 | y2 | `number` (optional) | Ending y coordinate of the line |
-| r | `string` (optional) | Distance from (x, y) for Polar system |
+| r | `number` (optional) | Distance from (x, y) for Polar system |
 | angle | `number` (optional) | Angle from the horizontal axis in radians (Clockwise is positive) for Polar system |
-| borderColor | `number` (optional) | Color of the line (same as `background` option) |
+| borderColor | `string` (optional) | Color of the line (same as `background` option) |
 | borderWidth | `number` (optional) | Thickness of the line |
 
 
