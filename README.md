@@ -93,7 +93,9 @@ These options are common between all the elements included in the library.
 | x | `number` (required) | X coordinate of the element in canvas |
 | y | `number` (required) | Y coordinate of the element in canvas |
 | ctx | `CanvasRenderingContext2D` (required) | Context of the canvas to which the element must be drawn |
-| background| `string` (optional) | Fill color. Eg. `#6ddad0`, `rgba(20, 30, 40, 0.5)` |
+| background | `string` (optional) | Fill color. Eg. `#6ddad0`, `rgba(20, 30, 40, 0.5)` |
+| borderWidth | `number` (optional) | Thickness of the border |
+| borderColor | `string` (optional) | Color of the border |
 | rotation | `number` (optional) | Rotation of the element in radians. Center is geometric center for shapes and starting coordinates for `Text` element
 
 ### Circle
@@ -102,8 +104,6 @@ Some exclusive options for Circle element.
 |Option| Type | Description |
 |:--:| -- | -- |
 | r | `number` (required) | Radius of the circle |
-| borderColor | `string` (optional) | Color of the border around the circle |
-| borderWidth | `number` (optional) | Thickness of the border |
 
 ### Rect (Rectangle)
 Some exclusive options for Rect element to create rectangles.
@@ -113,8 +113,6 @@ Some exclusive options for Rect element to create rectangles.
 | w | `number` (required) | Width of the rectangle |
 | h | `number` (required) | Height of the rectangle |
 | r | `number` (optional) | Roundness of every corner. Same as `border-radius` CSS property |
-| borderColor | `string` (optional) | Color of the border around the rectangle |
-| borderWidth | `number` (optional) | Thickness of the border |
 
 ### Ellipse
 Some exclusive options for Ellipse element.
@@ -123,8 +121,6 @@ Some exclusive options for Ellipse element.
 |:--:| -- | -- |
 | radiusX | `number` (required) | Horizontal radius of the ellipse |
 | radiusY | `number` (required) | Vertical radius of the ellipse |
-| borderColor | `string` (optional) | Color of the border around the ellipse |
-| borderWidth | `number` (optional) | Thickness of the border |
 
 ### Line
 Some exclusive options for Line element.
@@ -135,9 +131,6 @@ Some exclusive options for Line element.
 | y2 | `number` (optional) | Ending y coordinate of the line |
 | r | `number` (optional) | Distance from (x, y) for Polar system |
 | angle | `number` (optional) | Angle from the horizontal axis in radians (Clockwise is positive) for Polar system |
-| borderColor | `string` (optional) | Color of the line (same as `background` option) |
-| borderWidth | `number` (optional) | Thickness of the line |
-
 
 ### Text
 Some exclusive options for Text element to render text.
