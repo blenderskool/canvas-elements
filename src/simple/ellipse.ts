@@ -4,8 +4,6 @@ export default class Ellipse extends Element {
 
   radiusX: number;
   radiusY: number;
-  borderColor: string;
-  borderWidth: number;
 
   /**
    * @param {Object} options options to create an ellipse
@@ -23,16 +21,11 @@ export default class Ellipse extends Element {
       rotation?: number, background?: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D }
   ) {
 
-    const { x, y, radiusX, radiusY, rotation = 0, background, borderColor, borderWidth = 0, ctx} = options;
-    super(x, y, rotation, background, ctx);
+    const { x, y, radiusX, radiusY, rotation = 0, background, borderColor, borderWidth, ctx} = options;
+    super(x, y, rotation, background, borderWidth, borderColor, ctx);
 
-    this.x = x;
-    this.y = y;
     this.radiusX = radiusX;
     this.radiusY = radiusY;
-    this.borderColor = borderColor;
-    this.borderWidth = borderWidth;
-    this.ctx = ctx;
 
     this.draw();
   }

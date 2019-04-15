@@ -5,8 +5,6 @@ export default class Rect extends Element {
   r: number;
   w: number;
   h: number;
-  borderColor: string;
-  borderWidth: number;
 
   /**
    * 
@@ -22,16 +20,14 @@ export default class Rect extends Element {
    * @param {CanvasRenderingContext2D} options.ctx canvas context where rectangle would be drawn
    */
   constructor(
-    { x, y, w, h, r=0, rotation=0, borderColor, background = '#000', borderWidth = 0, ctx } :
+    { x, y, w, h, r=0, rotation=0, borderColor, background, borderWidth, ctx } :
     {x: number, y: number, w: number, h: number, r?: number, rotation?: number, borderColor?: string, background?: string,
       borderWidth?: number, ctx: CanvasRenderingContext2D}
   ) {
-    super(x, y, rotation, background, ctx);
+    super(x, y, rotation, background, borderWidth, borderColor, ctx);
     this.r = r;
     this.w = w;
     this.h = h;
-    this.borderColor = borderColor;
-    this.borderWidth = borderWidth;
 
     this.draw();
   }

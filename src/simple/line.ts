@@ -4,8 +4,6 @@ export default class Line extends Element {
 
   x2: number;
   y2: number;
-  borderColor: string;
-  borderWidth: number;
 
   /**
    * @param {Object} options options to create a line
@@ -24,8 +22,8 @@ export default class Line extends Element {
     {x: number, y:number, x2?: number, y2?: number, r?: number, angle?: number,
       rotation?: number, background?: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D}
   ) {
-    const { x, y, x2, y2, r, angle, rotation = 0, background, borderColor, borderWidth = 0, ctx } = options;
-    super(x, y, rotation, background || borderColor, ctx);
+    const { x, y, x2, y2, r, angle, rotation = 0, background, borderColor, borderWidth, ctx } = options;
+    super(x, y, rotation, background || borderColor, borderWidth, borderColor, ctx);
 
     if (typeof x2 === "number" && typeof y2 === "number") {
       /**
@@ -48,9 +46,6 @@ export default class Line extends Element {
       throw new Error('Insufficient values to draw a line');
     }
 
-    this.borderColor = borderColor;
-    this.borderWidth = borderWidth;
-
     this.draw();
   }
 
@@ -68,6 +63,7 @@ export default class Line extends Element {
     this.ctx.moveTo(this.x, this.y);
     this.ctx.lineTo(this.x2, this.y2);
     if (this.borderWidth) {
+      this.ctx.lineCap = "round";
       this.ctx.lineWidth = this.borderWidth;
       this.ctx.strokeStyle = this.background;
     }
