@@ -4,9 +4,19 @@ class Element {
   y:number;
   rotation: number;
   background: string;
+  borderWidth: number;
+  borderColor: string;
   ctx: CanvasRenderingContext2D;
 
-  constructor(x: number, y: number, rotation: number = 0, background: string = '#000', ctx: CanvasRenderingContext2D) {
+  constructor(
+    x: number,
+    y: number,
+    rotation: number = 0,
+    background: string = '#000',
+    borderWidth: number = 0,
+    borderColor: string = '#000',
+    ctx: CanvasRenderingContext2D
+  ) {
 
     if (!x)
       throw new Error('X coordinate is not defined');
@@ -19,6 +29,8 @@ class Element {
     this.y = y;
     this.rotation = rotation;
     this.background = background;
+    this.borderWidth = borderWidth;
+    this.borderColor = borderColor;
     this.ctx = ctx;
   }
 

@@ -20,12 +20,14 @@ export default class Text extends Element {
    * @param {string} options.baseline text baseline
    * @param {string} options.weight text weight
    * @param {string} options.text text to be shown
+   * @param {string} options.borderColor border color
+   * @param {number} options.borderWidth border width
    * @param {CanvasRenderingContext2D} options.ctx canvas context where text would be drawn
    */
   constructor(
     options :
     { x: number, y: number, rotation?: number, size?: number, font?: string, background?: string, align?: CanvasTextAlign,
-      baseline?: CanvasTextBaseline, weight?: string, text: string, ctx: CanvasRenderingContext2D }
+      baseline?: CanvasTextBaseline, weight?: string, text: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D }
   ) {
     const {
       x, y, size=18,
@@ -35,13 +37,13 @@ export default class Text extends Element {
       align='left',
       baseline='middle',
       text, ctx,
+      borderColor,
+      borderWidth,
       weight = '400'
     } = options;
 
-    super(x, y, rotation, background, ctx);
+    super(x, y, rotation, background, borderWidth, borderColor, ctx);
 
-    this.x = x;
-    this.y = y;
     this.size = size;
     this.font = font;
     this.background = background;
@@ -49,7 +51,6 @@ export default class Text extends Element {
     this.baseline = baseline;
     this.weight = weight;
     this.text = text;
-    this.ctx = ctx;
 
     this.draw();
 
@@ -63,6 +64,15 @@ export default class Text extends Element {
     this.ctx.fillStyle = this.background;
     this.ctx.textAlign = this.align;
     this.ctx.textBaseline = this.baseline;
+
+    /**
+     * Set the border for the text element
+     */
+    if (this.borderWidth) {
+      this.ctx.lineWidth = this.borderWidth;
+      this.ctx.strokeStyle = this.borderColor;
+      this.ctx.strokeText(this.text, this.x, this.y);
+    }
     this.ctx.fillText(this.text, this.x, this.y);
 
     // Rotate the canvas back to its original state
