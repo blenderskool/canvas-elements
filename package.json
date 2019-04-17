@@ -1,6 +1,6 @@
 {
   "name": "canvas-elements",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Collection of easy to use elements with HTML5 Canvas",
   "main": "build/index.js",
   "scripts": {
