@@ -131,6 +131,7 @@ Some exclusive options for Line element.
 | y2 | `number` (optional) | Ending y coordinate of the line |
 | r | `number` (optional) | Distance from (x, y) for Polar system |
 | angle | `number` (optional) | Angle from the horizontal axis in radians (Clockwise is positive) for Polar system |
+| lineCap | `string` (optional) | Style for the ends of the line. Takes values `square (default)`, `round`, `butt` |
 
 ### Text
 Some exclusive options for Text element to render text.
