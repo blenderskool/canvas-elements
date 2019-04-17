@@ -1,5 +1,5 @@
 # Canvas Elements
-[![Release](https://badgen.net/github/release/blenderskool/canvas-elements?color=orange)](https://npmjs.com/package/canvas-elements)
+[![Release](https://badgen.net/npm/v/canvas-elements?label=release)](https://npmjs.com/package/canvas-elements)
 [![Size](https://badgen.net/bundlephobia/min/canvas-elements?color=green)](https://npmjs.com/package/canvas-elements)
 [![License](https://badgen.net/github/license/blenderskool/canvas-elements)](https://github.com/blenderskool/canvas-elements/blob/master/LICENSE)
 
