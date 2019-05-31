@@ -14,15 +14,16 @@ export default class Ellipse extends Element {
    * @param {string} options.background fill color
    * @param {string} options.borderColor border color
    * @param {number} options.borderWidth border width
+   * @param {string} options.borderStyle border style
    * @param {CanvasRenderingContext2D} options.ctx canvas context where ellipse would be drawn
    */
   constructor(options :
     { x: number, y: number, radiusX: number, radiusY: number,
-      rotation?: number, background?: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D }
+      rotation?: number, background?: string, borderColor?: string, borderWidth?: number, borderStyle?: string, ctx: CanvasRenderingContext2D }
   ) {
 
-    const { x, y, radiusX, radiusY, rotation = 0, background, borderColor, borderWidth, ctx} = options;
-    super(x, y, rotation, background, borderWidth, borderColor, ctx);
+    const { x, y, radiusX, radiusY, rotation = 0, background, borderColor, borderWidth, borderStyle, ctx} = options;
+    super(x, y, rotation, background, borderWidth, borderColor, borderStyle, ctx);
 
     this.radiusX = radiusX;
     this.radiusY = radiusY;
@@ -31,6 +32,8 @@ export default class Ellipse extends Element {
   }
 
   draw(): void {
+
+    super.draw();
 
     this.ctx.beginPath();
     this.ctx.ellipse(this.x, this.y, this.radiusX, this.radiusY, this.rotation, 0, 2*Math.PI, false);

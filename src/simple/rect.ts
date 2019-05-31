@@ -17,14 +17,15 @@ export default class Rect extends Element {
    * @param {string} options.borderColor border color
    * @param {string} options.background fill color
    * @param {number} options.borderWidth border width
+   * @param {string} options.borderStyle border style
    * @param {CanvasRenderingContext2D} options.ctx canvas context where rectangle would be drawn
    */
   constructor(
-    { x, y, w, h, r=0, rotation=0, borderColor, background, borderWidth, ctx } :
+    { x, y, w, h, r=0, rotation=0, borderColor, background, borderWidth, borderStyle, ctx } :
     {x: number, y: number, w: number, h: number, r?: number, rotation?: number, borderColor?: string, background?: string,
-      borderWidth?: number, ctx: CanvasRenderingContext2D}
+      borderWidth?: number, borderStyle?: string, ctx: CanvasRenderingContext2D}
   ) {
-    super(x, y, rotation, background, borderWidth, borderColor, ctx);
+    super(x, y, rotation, background, borderWidth, borderColor, borderStyle, ctx);
     this.r = r;
     this.w = w;
     this.h = h;
@@ -33,6 +34,7 @@ export default class Rect extends Element {
   }
 
   draw() {
+    super.draw();
     // Initial rotation about the center of the rectangle
     this.rotate(this.w/2 + this.x, this.h/2 + this.y);
 

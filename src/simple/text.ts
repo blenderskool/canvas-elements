@@ -22,12 +22,13 @@ export default class Text extends Element {
    * @param {string} options.text text to be shown
    * @param {string} options.borderColor border color
    * @param {number} options.borderWidth border width
+   * @param {string} options.borderStyle border style
    * @param {CanvasRenderingContext2D} options.ctx canvas context where text would be drawn
    */
   constructor(
     options :
     { x: number, y: number, rotation?: number, size?: number, font?: string, background?: string, align?: CanvasTextAlign,
-      baseline?: CanvasTextBaseline, weight?: string, text: string, borderColor?: string, borderWidth?: number, ctx: CanvasRenderingContext2D }
+      baseline?: CanvasTextBaseline, weight?: string, text: string, borderColor?: string, borderWidth?: number, borderStyle?: string, ctx: CanvasRenderingContext2D }
   ) {
     const {
       x, y, size=18,
@@ -39,10 +40,11 @@ export default class Text extends Element {
       text, ctx,
       borderColor,
       borderWidth,
+      borderStyle,
       weight = '400'
     } = options;
 
-    super(x, y, rotation, background, borderWidth, borderColor, ctx);
+    super(x, y, rotation, background, borderWidth, borderColor, borderStyle, ctx);
 
     this.size = size;
     this.font = font;
@@ -57,6 +59,7 @@ export default class Text extends Element {
   }
 
   draw() {
+    super.draw();
     // Initial rotation about the starting point of text
     this.rotate(this.x, this.y);
 

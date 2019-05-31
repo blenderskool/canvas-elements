@@ -6,6 +6,7 @@ class Element {
   background: string;
   borderWidth: number;
   borderColor: string;
+  borderStyle: string|[number];
   ctx: CanvasRenderingContext2D;
 
   constructor(
@@ -15,6 +16,7 @@ class Element {
     background: string = '#000',
     borderWidth: number = 0,
     borderColor: string = '#000',
+    borderStyle: string = 'solid',
     ctx: CanvasRenderingContext2D
   ) {
 
@@ -31,6 +33,7 @@ class Element {
     this.background = background;
     this.borderWidth = borderWidth;
     this.borderColor = borderColor;
+    this.borderStyle = borderStyle;
     this.ctx = ctx;
   }
 
@@ -44,6 +47,29 @@ class Element {
     this.ctx.translate(cx, cy);
     this.ctx.rotate((clockwise ? 1 : -1)*this.rotation);
     this.ctx.translate(-cx, -cy);
+  }
+
+  draw() {
+    if (typeof this.borderStyle == 'string') {
+      switch (this.borderStyle) {
+        // Dotted border
+        case 'dotted':
+          this.ctx.setLineDash([1, 2*this.borderWidth]);
+          break;
+        // Dashed border
+        case 'dashed':
+          this.ctx.setLineDash([8, 10]);
+          break;
+        // Default border
+        default:
+          this.ctx.setLineDash([]);
+          break;
+      }
+    }
+    // If user specifies line dash pattern array then use it directly
+    else if (Array.isArray(this.borderStyle)) {
+      this.ctx.setLineDash(this.borderStyle);
+    }
   }
 
 }
