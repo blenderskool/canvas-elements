@@ -20,9 +20,9 @@ class Element {
     ctx: CanvasRenderingContext2D
   ) {
 
-    if (!x)
+    if (typeof x !== 'number')
       throw new Error('X coordinate is not defined');
-    if (!y)
+    if (typeof y !== 'number')
       throw new Error('Y coordinate is not defined');
     if (!ctx)
       throw new Error('Canvas rendering context is not defined');
